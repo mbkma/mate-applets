@@ -21,7 +21,6 @@ AM_CPPFLAGS =					\
 	$(MATE_APPLETS4_CFLAGS)			\
 	$(LIBWNCK_CFLAGS)			\
 	$(XML2_CFLAGS)				\
-	-DSTICKYNOTES_MENU_UI_DIR=\""$(uidir)"\" \
 	-DGRESOURCE=\""/org/mate/mate-applets/sticky-notes/\"" \
 	${WARN_CFLAGS}				\
 	$(NULL)
@@ -50,9 +49,6 @@ stickynotes_applet_LDADD =			\
 	$(XML2_LIBS)				\
 	-lX11					\
 	$(NULL)
-
-uidir = $(datadir)/mate/ui
-ui_DATA = $(ui_files)
 
 stickynotes_gschema_in_files = org.mate.stickynotes.gschema.xml.in
 gsettings_SCHEMAS = $(stickynotes_gschema_in_files:.xml.in=.xml)
